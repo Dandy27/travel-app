@@ -29,76 +29,226 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             Padding(
               padding: const EdgeInsets.only(
                   left: 15, right: 15, top: 60, bottom: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      RotatedBox(
-                        quarterTurns: 1,
-                        child: Icon(Icons.bar_chart_outlined),
-                      ),
-                      Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                'https://cdn.pixabay.com/photo/2015/03/08/17/25/musician-664432_960_720.jpg',
-                              ),
-                              fit: BoxFit.cover),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        RotatedBox(
+                          quarterTurns: 1,
+                          child: Icon(Icons.bar_chart_outlined),
                         ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    'Hey Faruk !',
-                    style: TextStyle(fontFamily: "Poppins", color: Colors.grey),
-                  ),
-                  // const SizedBox(height: 15,),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        "Let's Explore\nThe World",
-                        style: TextStyle(
-                            fontFamily: "Poppins",
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Icon(
-                          Icons.emoji_emotions,
-                          color: Colors.orange,
+                        Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                  'https://cdn.pixabay.com/photo/2015/03/08/17/25/musician-664432_960_720.jpg',
+                                ),
+                                fit: BoxFit.cover),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  // buildTabBar(),
+                      ],
+                    ),
+                    Text(
+                      'Hey Faruk !',
+                      style:
+                          TextStyle(fontFamily: "Poppins", color: Colors.grey),
+                    ),
+                    // const SizedBox(height: 15,),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          "Let's Explore\nThe World",
+                          style: TextStyle(
+                              fontFamily: "Poppins",
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Icon(
+                            Icons.emoji_emotions,
+                            color: Colors.orange,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    // buildTabBar(),
 
-                  buildTabBar(),
-                  Container(
-                    margin: EdgeInsets.only(top: 20),
-                    height: 300,
-                    width: double.infinity,
-                    child: TabBarView(controller: tabController, children: [
-                      buildTabItem(
-                          "assets/images/1.jpeg", "assets/images/2.jpeg"),
-                      buildTabItem(
-                          "assets/images/3.jpeg", "assets/images/4.jpeg"),
-                      buildTabItem(
-                          "assets/images/1.jpeg", "assets/images/4.jpeg"),
-                      buildTabItem(
-                          "assets/images/3.jpeg", "assets/images/1.jpeg"),
-                    ]),
-                  )
-                ],
+                    buildTabBar(),
+                    Container(
+                      margin: EdgeInsets.only(top: 20),
+                      height: 300,
+                      width: double.infinity,
+                      child: TabBarView(controller: tabController, children: [
+                        buildTabItem(
+                            "assets/images/1.jpeg", "assets/images/2.jpeg"),
+                        buildTabItem(
+                            "assets/images/3.jpeg", "assets/images/4.jpeg"),
+                        buildTabItem(
+                            "assets/images/1.jpeg", "assets/images/4.jpeg"),
+                        buildTabItem(
+                            "assets/images/3.jpeg", "assets/images/1.jpeg"),
+                      ]),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Top Destinations',
+                      style: TextStyle(
+                          color: Colors.grey[700],
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 90,
+                      width: double.infinity,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          Container(
+                            height: 80,
+                            width: 190,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.blue[50].withOpacity(0.8)),
+                            child: Row(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(right: 10),
+                                  height: 70,
+                                  width: 70,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage("assets/images/3.jpeg"),
+                                        fit: BoxFit.cover),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Backwater",
+                                      style: TextStyle(
+                                          color: Colors.grey[700],
+                                          fontFamily: "Poppims",
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      "karaka, Indía",
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 11,
+                                          fontFamily: "Poppins"),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.star_rate,
+                                          color: Colors.orange,
+                                          size: 20,
+                                        ),
+                                        const SizedBox(width: 5,), 
+                                        Text(
+                                          '4.9',
+                                          style: TextStyle(
+                                            color: Colors.grey[700],
+                                            fontFamily: "Poppins",
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            height: 80,
+                            width: 190,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.blue[50].withOpacity(0.8)),
+                            child: Row(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(right: 10),
+                                  height: 70,
+                                  width: 70,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage("assets/images/4.jpeg"),
+                                        fit: BoxFit.cover),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Backwater",
+                                      style: TextStyle(
+                                          color: Colors.grey[700],
+                                          fontFamily: "Poppims",
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      "karaka, Indía",
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 11,
+                                          fontFamily: "Poppins"),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.star_rate,
+                                          color: Colors.orange,
+                                          size: 20,
+                                        ),
+                                        const SizedBox(width: 5,), 
+                                        Text(
+                                          '4.9',
+                                          style: TextStyle(
+                                            color: Colors.grey[700],
+                                            fontFamily: "Poppins",
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
@@ -188,7 +338,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 borderRadius: BorderRadius.circular(20),
                 image: DecorationImage(
                     image: AssetImage(images2), fit: BoxFit.cover)),
-                    child: buildContainerMenor(),
+            child: buildContainerMenor(),
           ),
         ],
       ),
@@ -197,46 +347,48 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   Column buildContainerMenor() {
     return Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Container(
+          padding: EdgeInsets.all(15),
+          margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
+          height: 80,
+          width: double.infinity,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.white.withOpacity(0.8)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                padding: EdgeInsets.all(15),
-                margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
-                height: 80,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.white.withOpacity(0.8)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Nusa Penida Island',
-                      style: TextStyle(
-                          color: Colors.grey[800],
-                          fontFamily: "Poppins",
-                          fontSize: 18),
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.location_on,
-                          size: 15,
-                          color: Colors.blue,
-                        ),
-                        const SizedBox(width: 6,),
-                        Text("Bali, Indonesia",
-                            style: TextStyle(
-                              color: Colors.grey[800],
-                              fontFamily: "Poppins",
-                              fontSize: 10,
-                            ))
-                      ],
-                    )
-                  ],
-                ),
+              Text(
+                'Nusa Penida Island',
+                style: TextStyle(
+                    color: Colors.grey[800],
+                    fontFamily: "Poppins",
+                    fontSize: 18),
               ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.location_on,
+                    size: 15,
+                    color: Colors.blue,
+                  ),
+                  const SizedBox(
+                    width: 6,
+                  ),
+                  Text("Bali, Indonesia",
+                      style: TextStyle(
+                        color: Colors.grey[800],
+                        fontFamily: "Poppins",
+                        fontSize: 10,
+                      ))
+                ],
+              )
             ],
-          );
+          ),
+        ),
+      ],
+    );
   }
 }
